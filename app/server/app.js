@@ -30,7 +30,8 @@ var expressOptions = require('./expressOptions')
 // express
 app.use(compression({ level: 9 }))
 app.use(session)
-app.use(myutil.basicAuth)
+// app.use(myutil.basicAuth)
+app.use('/ssh/host/:host?',myutil.basicAuth)
 if (config.accesslog) app.use(logger('common'))
 app.disable('x-powered-by')
 
